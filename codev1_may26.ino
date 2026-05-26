@@ -105,7 +105,7 @@ void dribble() {
   digitalWrite(d2in4, LOW);
   analogWrite(d2enb, 100);
 
-  servo.write(servoPin, 110);
+  servo.write(110);
 }
 
 void shoot() {
@@ -113,7 +113,7 @@ void shoot() {
   digitalWrite(d2in4, HIGH);
   analogWrite(d2enb, 255);
 
-  servo.write(servoPin, 120);
+  servo.write(120);
 }
 
 void disengage() {
@@ -121,7 +121,7 @@ void disengage() {
   digitalWrite(d2in4, LOW);
   analogWrite(d2enb, 0);
 
-  servo.write(servoPin, 60);
+  servo.write(60);
 }
 
 // ===========================
