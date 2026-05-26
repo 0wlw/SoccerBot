@@ -23,10 +23,10 @@ const char *password = "77423801";
 #define MOTOR_IN2 41
 #define MOTOR_IN3 42
 #define MOTOR_IN4 1
-#define d2in3 5 /////
-#define d2in4 6 /////
-#define d2enb 7 /////
-#define servoPin 8 /////
+#define d2in3 45/////
+#define d2in4 48 /////
+#define d2enb 47 /////
+#define servoPin 21 /////
 
 // ===========================
 // Freenove ESP32-S3 WROOM Camera Pins
@@ -105,7 +105,7 @@ void dribble() {
   digitalWrite(d2in4, LOW);
   analogWrite(d2enb, 100);
 
-  digitalWrite(servoPin, LOW);
+  digitalWrite(servoPin, 110);
 }
 
 void shoot() {
@@ -113,15 +113,15 @@ void shoot() {
   digitalWrite(d2in4, HIGH);
   analogWrite(d2enb, 255);
 
-  digitalWrite(servoPin, LOW);
+  digitalWrite(servoPin, 120);
 }
 
 void disengage() {
-  digitalWrite(in3, LOW);
-  digitalWrite(in4, LOW);
-  analogWrite(enb, 0);
+  digitalWrite(d2in3, LOW);
+  digitalWrite(d2in4, LOW);
+  analogWrite(d2enb, 0);
 
-  digitalWrite(servoPin, LOW);
+  digitalWrite(servoPin, 60);
 }
 
 // ===========================
