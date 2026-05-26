@@ -170,7 +170,7 @@ static const char PROGMEM INDEX_HTML[] = R"rawliteral(
     <div class="blank"></div>
     <div class="btn" id="btn-dribble" data-cmd="dribble">drib</div>
     <div class="blank"></div>
-    <div class="btn" id="btn-stop" data-cmd="disengage">stop</div>
+    <div class="btn" id="btn-disengage" data-cmd="disengage">stop</div>
     <div class="blank"></div>
   </div>
 
@@ -306,6 +306,9 @@ static esp_err_t motor_handler(httpd_req_t *req) {
       else if (strcmp(cmd, "backward") == 0) moveBackward();
       else if (strcmp(cmd, "left") == 0) turnLeft();
       else if (strcmp(cmd, "right") == 0) turnRight();
+      else if (strcmp(cmd, "shoot") == 0) shoot();
+      else if (strcmp(cmd, "dribble") == 0) dribble();
+      else if (strcmp(cmd, "disengage") == 0) disengage();
       else stopMotors();
     }
   }
