@@ -24,7 +24,7 @@ const char *password = "77423801";
 #define MOTOR_IN3 42
 #define MOTOR_IN4 1
 #define d2in3 45/////
-#define d2in4 48 /////
+#define d2in4 35 /////
 #define d2enb 47 /////
 #define servoPin 21 /////
 
@@ -105,7 +105,7 @@ void dribble() {
   digitalWrite(d2in4, LOW);
   analogWrite(d2enb, 100);
 
-  digitalWrite(servoPin, 110);
+  servo.write(servoPin, 110);
 }
 
 void shoot() {
@@ -113,7 +113,7 @@ void shoot() {
   digitalWrite(d2in4, HIGH);
   analogWrite(d2enb, 255);
 
-  digitalWrite(servoPin, 120);
+  servo.write(servoPin, 120);
 }
 
 void disengage() {
@@ -121,7 +121,7 @@ void disengage() {
   digitalWrite(d2in4, LOW);
   analogWrite(d2enb, 0);
 
-  digitalWrite(servoPin, 60);
+  servo.write(servoPin, 60);
 }
 
 // ===========================
@@ -408,7 +408,7 @@ void startCameraServer() {
 void setup() {
   Serial.begin(115200);
   Serial.setDebugOutput(false);
-  servo.attach(15);
+  servo.attach(21);
   servo.write(60);
 
   // Turn off onboard LED
